@@ -37,7 +37,7 @@ class Foreman::Export::Daemontools < Foreman::Export::Base
     env_dir      = proc_dir + 'env'
 
     proc_dir.mkpath
-    write_file(proc_dir + 'down', '')
+#    write_file(proc_dir + 'down', '')
     log_dir.mkpath
     log_run = log_dir + 'run'
     write_template("daemontools/daemontools-log-run.erb", log_run, binding)
