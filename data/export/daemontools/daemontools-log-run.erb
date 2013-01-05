@@ -3,7 +3,7 @@ LOGDIR=<%= log_main_dir %>
 
 if [ ! -d $LOGDIR ]; then
   mkdir $LOGDIR || exit 1
-  chown <%= user %>:<%= user %> $LOGDIR || exit 1
+  chown <%= user %>: $LOGDIR || exit 1
 fi
 
 exec setuidgid <%= user %> multilog t $LOGDIR
