@@ -44,6 +44,9 @@ class Foreman::Export::Daemontools < Foreman::Export::Base
     log_run.chmod(0755)
 
     env_dir.mkpath
+    Dir.glob(env_dir + "/*").each do |e|
+      File.delete(e)
+    end
     env.each do |k,v|
       write_file(env_dir + k, v)
     end
